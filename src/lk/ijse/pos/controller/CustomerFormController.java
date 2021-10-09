@@ -20,7 +20,7 @@ import java.sql.SQLException;
 public class CustomerFormController {
 
     public boolean saveCustomer(CustomerModel c) throws ClassNotFoundException, SQLException {
-        return ("INSERT INTO Customer VALUES (?,?,?,?)",c.getId(), c.getName(), c.getAddress(), c.getSalary());
+        return ("INSERT INTO Customer VALUES (?,?,?,?)"c.getId(), c.getName(), c.getAddress(), c.getSalary());
     }
 }
 
