@@ -9,6 +9,9 @@
 
 package lk.ijse.pos.controller;
 
+import lk.ijse.pos.db.DBConnection;
+import lk.ijse.pos.model.ItemModel;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -20,8 +23,8 @@ import java.sql.SQLException;
 public class ItemFormController {
 
     @Override
-    public boolean saveItem(Item i) throws SQLException, ClassNotFoundException {
-        Connection con= DbConnection.getInstance().getConnection();
+    public boolean saveItem(ItemModel i) throws SQLException, ClassNotFoundException {
+        Connection con= DBConnection.getInstance().getConnection();
         String query="INSERT INTO Item VALUES(?,?,?,?,?)";
         PreparedStatement stm = con.prepareStatement(query);
         stm.setObject(1,i.getItemID());
